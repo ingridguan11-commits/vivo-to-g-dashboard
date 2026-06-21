@@ -153,7 +153,7 @@ function sanitizeFilter(next: DashboardFilter, regionMetrics: RegionMetric[]): D
     ...next,
     month: months.includes(next.month) ? next.month : months[months.length - 1] ?? next.month,
     week: weeks.includes(next.week) ? next.week : weeks[weeks.length - 1] ?? next.week,
-    selectedRegions: next.selectedRegions.length > 0 ? next.selectedRegions : REGIONS
+    selectedRegions: next.selectedRegions
   };
 }
 

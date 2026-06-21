@@ -23,7 +23,7 @@ export function FilterBar({ filter, years, months, weeks, onChange }: FilterBarP
     const selected = filter.selectedRegions.includes(region)
       ? filter.selectedRegions.filter((item) => item !== region)
       : [...filter.selectedRegions, region];
-    onChange({ ...filter, selectedRegions: selected.length === 0 ? REGIONS : selected });
+    onChange({ ...filter, selectedRegions: selected });
   };
 
   return (
@@ -118,7 +118,7 @@ export function FilterBar({ filter, years, months, weeks, onChange }: FilterBarP
               </button>
               <button
                 type="button"
-                onClick={() => onChange({ ...filter, selectedRegions: REGIONS })}
+                onClick={() => onChange({ ...filter, selectedRegions: [] })}
                 className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs text-slate-500 hover:bg-slate-100"
               >
                 <RotateCcw className="h-3.5 w-3.5" />
